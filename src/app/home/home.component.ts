@@ -30,4 +30,8 @@ export class HomeComponent implements OnInit {
     const grade = this.recordService.grades.find(x => x.id === gradeId);
     return grade ? `${grade.name} | ${grade.description}` : "Oops, couldn't find grade"
   }
+
+  deleteRow(recordId: number) {
+    this.recordService.deleteItemById(recordId);
+  }
 }

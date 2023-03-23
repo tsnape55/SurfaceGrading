@@ -17,7 +17,7 @@
         <td class="table-cell-width"><i>{{getSurfaceTypeName(record.surfaceTypeId)}}</i></td>
         <td class="table-cell-width-small">{{record.gradeId}}</td>
         <td class="table-cell-width"><i>{{getGradeNameAndDescription(record.gradeId)}}</i></td>
-        <td class="table-cell-width-small"><button>Delete</button></td>
+        <td class="table-cell-width-small"><button (click)="deleteRow(record.id)">Delete</button></td>
       </tr>
     </table>
     <button (click)="emptyList()">Empty list</button>
