@@ -32,16 +32,16 @@ export class RecordService {
       });
   }
 
-  AddItem(surfaceTypeId: number, gradeId: number) {
+  addItem(surfaceTypeId: number, gradeId: number) {
     this.records.push(new Record(this.initialId, surfaceTypeId, gradeId));
     this.initialId++;
   }
 
-  EmptyList() {
+  emptyList() {
     this.records.splice(0, this.records.length);
   }
 
-  DeleteItemById(recordId: number) {
+  deleteItemById(recordId: number) {
     const index = this.records.findIndex((x) => x.id === recordId);
     if (index !== -1) {
       this.records.splice(index, 1);
