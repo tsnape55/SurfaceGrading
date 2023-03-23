@@ -14,9 +14,9 @@
       <tr *ngFor="let record of records">
         <td class="table-cell-width-small">{{record.id}}</td>
         <td class="table-cell-width-small">{{record.surfaceTypeId}}</td>
-        <td class="table-cell-width"><i>{{getSurfaceTypeName()}}</i></td>
+        <td class="table-cell-width"><i>{{getSurfaceTypeName(record.surfaceTypeId)}}</i></td>
         <td class="table-cell-width-small">{{record.gradeId}}</td>
-        <td class="table-cell-width"><i>{{getGradeNameAndDescription()}}</i></td>
+        <td class="table-cell-width"><i>{{getGradeNameAndDescription(record.gradeId)}}</i></td>
         <td class="table-cell-width-small"><button>Delete</button></td>
       </tr>
     </table>

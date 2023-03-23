@@ -21,11 +21,13 @@ export class HomeComponent implements OnInit {
     this.recordService.emptyList();
   }
 
-  getSurfaceTypeName(): string {
-    return 'TODO: Show SurfaceType name';
+  getSurfaceTypeName(surfaceTypeId: number): string {
+    const surfaceType = this.recordService.surfaceTypes.find(x => x.id === surfaceTypeId);
+    return surfaceType?.name ?? "Oops, couldn't find surface type";
   }
 
-  getGradeNameAndDescription(): string {
-    return 'TODO: Show Grade name and description';
+  getGradeNameAndDescription(gradeId: number): string {
+    const grade = this.recordService.grades.find(x => x.id === gradeId);
+    return grade ? `${grade.name} | ${grade.description}` : "Oops, couldn't find grade"
   }
 }

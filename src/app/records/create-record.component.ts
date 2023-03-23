@@ -10,7 +10,6 @@ import { RecordService } from './record.service';
   templateUrl: './create-record.component.html',
 })
 export class CreateRecordComponent {
-  nextId = 3;
   isAdding = false;
   newRecord: Record;
   surfaceTypes: Array<SurfaceType>;
@@ -20,16 +19,17 @@ export class CreateRecordComponent {
 
   showAddForm(): void {
     this.isAdding = true;
-    this.newRecord = new Record(this.nextId, 0, 0);
+    this.newRecord = new Record(0, 0, 0);
     this.grades = this.recordService.grades;
     this.surfaceTypes = this.recordService.surfaceTypes;
   }
 
   submit(): void {
     this.isAdding = false;
-    this.nextId++;
-
-    // TODO: Submit new record to the list
+    this.recordService.addItem(
+      this.newRecord.surfaceTypeId,
+      this.newRecord.gradeId
+    );
   }
 
   canSubmit(): boolean {

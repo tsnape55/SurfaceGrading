@@ -6,9 +6,9 @@ import { Record } from './record';
 
 @Injectable()
 export class RecordService {
-  records: Array<Record>;
-  surfaceTypes: Array<SurfaceType>;
-  grades: Array<Grade>;
+  records: Array<Record> = [];
+  surfaceTypes: Array<SurfaceType> = [];
+  grades: Array<Grade> = [];
 
   initialId: number;
 
