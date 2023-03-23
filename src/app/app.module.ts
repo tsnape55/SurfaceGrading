@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
 import { CreateRecordComponent } from './records/create-record.component';
+import { RecordService } from './records/record.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { CreateRecordComponent } from './records/create-record.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RecordService],
   bootstrap: [HomeComponent]
 })
 export class AppModule { }
