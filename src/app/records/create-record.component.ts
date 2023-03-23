@@ -40,9 +40,13 @@ export class CreateRecordComponent {
 
     canSubmit(): boolean {
         if (this.newRecord.surfaceTypeId === 0) {
-            return false;
+          return false;
         }
-
+    
+        if (this.newRecord.gradeId === 0) {
+          return false;
+        }
+    
         return true;
-    }
+      }
 }
